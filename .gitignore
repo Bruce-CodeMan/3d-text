@@ -1,0 +1,10 @@
+# 操作系统生成的文件
+.DS_Store
+.env
+*.log
+build/
+dist/
+
+.cache/
+package-lock.json
+node_modules/
