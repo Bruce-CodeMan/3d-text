@@ -4,3 +4,9 @@ This project demostrates how to create stunning 3D text effects using Three.js. 
 
 # :movie_camera: Demo
 
+# :wrench: Usage
+
+```cmd
+npm install
+npm run dev
+```
