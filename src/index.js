@@ -45,6 +45,35 @@ fontLoader.load(
     const textMaterial = new THREE.MeshMatcapMaterial({ matcap: matcapTexture });
     const text = new THREE.Mesh(textGeometry, textMaterial);
     scene.add(text);
+
+    // Add the donutGeometry
+    const donutGeometry = new THREE.TorusGeometry(0.3, 0.2, 20, 45);
+
+    for(let i = 0; i < 100; i++){
+      // Create a random color
+      const randomColor = new THREE.Color(Math.random(), Math.random(), Math.random());
+      const donutMaterial = new THREE.MeshPhongMaterial({ color: randomColor });
+
+      const donut = new THREE.Mesh(donutGeometry, donutMaterial);
+      donut.position.x = (Math.random() - 0.5) * 10;
+      donut.position.y = (Math.random() - 0.5) * 10;
+      donut.position.z = (Math.random() - 0.5) * 10;
+
+      donut.rotation.x = Math.random() * Math.PI;
+      donut.rotation.y = Math.random() * Math.PI;
+
+      const scale = Math.random();
+      donut.scale.set(scale, scale, scale);
+      scene.add(donut);
+    }
+
+    // Add Environment light
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+    directionalLight.position.set(1, 1, 1);
+    scene.add(directionalLight);
   }
 )
 
